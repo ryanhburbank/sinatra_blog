@@ -1,0 +1,41 @@
+<div class="landing_page">
+  <div id='flash' class='notice'>
+    <a class="close" data-dismiss="alert"></a>
+    <%= flash[:error] %>
+  </div>
+<% unless session[:id] %>
+  <h1>DBC BLOGGING SITE</h1>
+  <p1>This site allows a user to create and view blog posts.</p1>
+  <h2>Login to view and create posts</h2>
+  <div id="create_user">
+    <h3>Create User</h3>
+    <table>
+      <form action="/user/new" method="POST"> 
+        <thead>Create Account</thead>
+        <tr><td><label for="name">Name</label>
+        <input id="name" type="text" name="user[name]"></td></tr>
+        <tr><td><label for="email">Email</label>
+        <input id="email" type="text" name="user[email]"></td></tr>
+        <tr><td><label for="password">Password</label>
+        <input id="password" type="password" name="user[password]"></td></tr>
+        <tr><td><input type="submit" value="Create"></td></tr>
+      </form>
+    </table>
+  </div>
+  <div id="login_user">
+    <h3>Login User</h3>
+    <table>
+      <form action="/user/login" method="POST">
+        <thead>Login</thead>
+        <tr><td><label for="email">Email</label>
+        <input id="email" type="text" name="user[email]"></td></tr>
+        <tr><td><label for="password">Password</label>
+        <input id="password" type="text" name="user[password]">  </td></tr>
+        <tr><td><input type="submit" value="Login"></tr></td>
+      </form>
+    </table>
+  </div>
+<% end %>
+
+  <%= erb :all_posts %>
+</div>

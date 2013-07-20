@@ -1,0 +1,8 @@
+<div class="tagged-posts">
+<ul>
+<% @current_tag.posts.each do |post| %>
+<li><a href="/posts/post/<%=post.id%>"><%=post.title%></a></li>
+<% end %>
+</ul>
+<a href="/tags" title="/tags">Back to tags</a>
+</div>

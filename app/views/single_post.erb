@@ -1,0 +1,16 @@
+<div class="single_post">
+<h2><%= @current_post.title %></h2>
+<p><%= @current_post.updated_at.strftime("Created at: %m/%d/%y %I:%M%P") %></p>
+<% if @current_post.user_id == session[:id] %>
+<p><a href="/posts/edit/<%= @current_post.id %>">Edit Post</a></p>
+<p><a href="/posts/delete/<%= @current_post.id %>">Delete Post</a></p>
+<% end %>  
+<p><%= @current_post.body %></p>
+<ul>
+  <% @current_post.tags.each do |tag| %>
+    <li><a href="/tags/posts/<%= tag.id %>"><%= tag.tag_name %></a></li>
+  <% end %>
+</ul>
+<a href="/posts" title="/posts">Back to posts</a>
+<a href="/user/logout" title="/user/logout">Logout</a>
+</div>

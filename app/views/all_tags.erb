@@ -1,0 +1,6 @@
+<ul>
+<% @tags.each do |tag| %>
+<li><a href="/tags/posts/<%=tag.id%>"><%=tag.tag_name%></a></li>
+<% end %>
+</ul>
+<a href="/posts" title="/posts">Back to posts</a>

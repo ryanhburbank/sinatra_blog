@@ -1,0 +1,21 @@
+.container {
+  margin: 20px auto;
+  width: 800px;
+  padding: 0px 20px 20px 20px;
+  border: 40px solid lightgrey;
+
+}
+
+.create_user {
+  float:left;
+}
+
+.login_user {
+  float:left;
+}
+th {
+  text-align: left;
+}
+
+
+

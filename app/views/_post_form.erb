@@ -1,0 +1,9 @@
+
+    <label for="title">Title</label>
+    <input id="title" type="text" name="post[title]" value="<%=@post.try(:title)%>">
+    <label for="body">Body</label>
+    <textarea id="body" placeholder="You type your blog entry here." name="post[body]"><%=@post.try(:body)%></textarea>
+    <label for="tags">Tags</label>
+    <input id="tags" type="text" name="post[tags]" value="<%=@post.try(:return_tags)%>">
+    <a href="/posts" title="/posts">Back to posts</a>
+
